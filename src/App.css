@@ -1,0 +1,100 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url("/assets/Poppins-Regular.ttf");
+  font-display: block;
+}
+
+body {
+  --dot-bg: black;
+  --dot-color: #808080;
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Poppins';
+  cursor: none;
+}
+
+.box {
+  background-color: #000;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+}
+
+.error {
+  border: 1px solid #fa7970 !important;
+  column-gap: 24px !important;
+}
+
+.box .icon {
+  font-size: 72px;
+  display: flex;
+  align-items: center;
+}
+
+.box .icon * {
+  color: #fa7970;
+}
+
+.box .text .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.box .text .solution {
+  font-size: 14px;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 16px;
+  padding: 2px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #FFF;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
+
+.slideshow {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
